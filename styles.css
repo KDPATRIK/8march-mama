@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    padding: 20px;
+    z-index: 1;
+}
+
+.greeting-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    animation: fadeIn 1s ease-out;
+}
+
+h1 {
+    color: #e91e63;
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-family: 'Marck Script', cursive;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.decoration {
+    color: #e91e63;
+    font-size: 24px;
+    margin: 20px 0;
+    letter-spacing: 10px;
+}
+
+.message {
+    color: #555;
+    line-height: 1.8;
+    margin: 30px 0;
+}
+
+.message p {
+    margin: 15px 0;
+}
+
+.message p:first-child {
+    font-size: 1.5em;
+    color: #e91e63;
+    font-family: 'Marck Script', cursive;
+}
+
+.heart {
+    color: #e91e63;
+    font-size: 40px;
+    margin-top: 20px;
+    animation: pulse 1.5s infinite;
+}
+
+.snowflakes {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.flower {
+    position: absolute;
+    font-size: 24px;
+    animation: fall linear infinite;
+    opacity: 0.7;
+}
+
+.flower:nth-child(1) { left: 10%; animation-duration: 10s; animation-delay: 0s; }
+.flower:nth-child(2) { left: 30%; animation-duration: 12s; animation-delay: 2s; }
+.flower:nth-child(3) { left: 50%; animation-duration: 9s; animation-delay: 4s; }
+.flower:nth-child(4) { left: 70%; animation-duration: 11s; animation-delay: 6s; }
+.flower:nth-child(5) { left: 90%; animation-duration: 13s; animation-delay: 8s; }
+
+.music-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    z-index: 2;
+}
+
+.music-button:hover {
+    transform: scale(1.1);
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
